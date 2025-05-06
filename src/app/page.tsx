@@ -1,10 +1,8 @@
+import CurrencyConvert from "@/components/currency-convert";
 import { getLatestRates } from "@/lib/api/open-exchange-api";
 
 export default async function Home() {
   const latestRates = await getLatestRates();
-
-  // TODO: Remove this
-  console.log(latestRates);
 
   return (
     <div className="h-min-[100dvh] flex justify-center">
@@ -12,6 +10,7 @@ export default async function Home() {
         <h1 className="bg-background sticky top-0 py-4 text-left text-2xl font-bold">
           Currency Converter
         </h1>
+        <CurrencyConvert latestRates={latestRates} />
       </div>
     </div>
   );
