@@ -1,0 +1,24 @@
+# Build directories
+.next/
+out/
+build/
+dist/
+
+# Dependency directories
+node_modules/
+
+# Generated files
+coverage/
+package-lock.json
+pnpm-lock.yaml
+*.min.js
+
+# Environment variables
+.env*
+!.env.example
+
+# Misc
+.DS_Store
+*.log
+.idea/
+.vscode/ 
