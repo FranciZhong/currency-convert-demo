@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { mergeClassNames } from "@/lib/utils";
+import { mergeClassNames } from "@/lib/utils/style";
 
 function Input({ className, type, ...props }: React.ComponentProps<"input">) {
   return (
