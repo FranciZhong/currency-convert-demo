@@ -3,6 +3,7 @@
 import type { CurrencyTimeseries } from "@/lib/currency";
 import { AlertTriangle, Loader2, TrendingUp } from "lucide-react";
 import { useEffect, useState } from "react";
+import TimeseriesChart from "./timeseries-chart";
 import {
   Dialog,
   DialogContent,
@@ -49,9 +50,6 @@ export default function TimeseriesDialog({ currency }: TimeseriesDialogProps) {
         }
 
         const data = await response.json();
-
-        // TODO: Remove this
-        console.log(data);
         setCurrencyTimeseries(data);
       } catch (err) {
         setError(err instanceof Error ? err.message : "Failed to fetch data");
@@ -84,7 +82,9 @@ export default function TimeseriesDialog({ currency }: TimeseriesDialogProps) {
               <p className="text-yellow-500">{error}</p>
             </div>
           )}
-          {currencyTimeseries && !isLoading && <div>TODO</div>}
+          {currencyTimeseries && !isLoading && (
+            <TimeseriesChart data={currencyTimeseries} />
+          )}
         </div>
       </DialogContent>
     </Dialog>
